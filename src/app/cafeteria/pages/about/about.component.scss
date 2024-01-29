@@ -1,0 +1,60 @@
+@use '../../../../styles/base/variables' as v;
+@use '../../../../styles/base/mixins' as m;
+h2 {
+    font-size: 3.6rem;
+    color: v.$primario;
+    text-align: center;
+
+    span {
+         color: v.$secundario;
+         font-size: 1.8rem;
+         display: block;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 10rem;
+        height: 10rem;
+        margin: 0 auto;
+        background-image: url(/assets/img/cafe.svg);
+        background-size: 10rem;
+    }
+}
+.contenido-principal{
+    padding: 40px 0px  90px 0px;
+}
+
+
+.contenido-nosotros {
+    @include m.tablet{ 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+    .imagen{
+        margin-bottom: 5rem;
+        @include m.tablet {
+            margin: 0 2rem 0 0 ;
+            margin-right: 2rem;
+        }
+        img {
+            transform: rotate(-3deg);
+            border: 3rem solid v.$blanco;
+            box-shadow: 9px 10px 5px -7px rgb(0 0 0 / .35);
+        }
+    }
+
+    .texto {
+        line-height: 2;
+
+        blockquote {
+            padding: 1rem;
+            margin: 0;
+            border-left: .5rem solid v.$primario;
+            font-size: 2rem;
+            
+        }
+    }
+}

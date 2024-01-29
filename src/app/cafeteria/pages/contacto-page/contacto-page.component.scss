@@ -1,0 +1,77 @@
+@use '../../../../styles/base/variables' as v;
+@use '../../../../styles/base/mixins' as m;
+h2 {
+    font-size: 3.6rem;
+    color: v.$primario;
+    text-align: center;
+
+    span {
+         color: v.$secundario;
+         font-size: 1.8rem;
+         display: block;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 10rem;
+        height: 10rem;
+        margin: 0 auto;
+        background-image: url(/assets/img/cafe.svg);
+        background-size: 10rem;
+    }
+}
+.contenido-principal{
+    padding: 40px 0px  90px 0px;
+    background-color: v.$blanco;
+}
+
+
+.contenido-contacto{
+    padding: 30px;
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        background-image: url(/assets/img/granos_cafe.jpg);
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+
+    
+}
+
+.formulario {
+    .campo {
+        margin-bottom: 2rem;
+
+
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+
+        label {
+            text-transform: uppercase;
+            display: block;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+      
+        input:not([type="submit"]) , select{
+            width: 100%;
+            padding: 1rem;
+            border: .5rem solid v.$primario;
+        }
+        input[type="submit"]{
+            background-color: v.$primario;
+            color: white;
+            width: 100%;
+            border: none;
+            padding: 1rem;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            font: bold;
+        }
+    }
+}
